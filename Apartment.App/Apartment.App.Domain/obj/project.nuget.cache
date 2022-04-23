@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "4FaDSnpBNL9SX9GjhRGcSec5raQoxmLndMCe7wehh7kx0bwr4UeQCKjN2gges+WSJ7RzKGB7ZdFvtBQlJV/sqw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.23\\microsoft.aspnetcore.cryptography.internal.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.23\\microsoft.aspnetcore.cryptography.keyderivation.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.23\\microsoft.extensions.caching.abstractions.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.23\\microsoft.extensions.configuration.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.23\\microsoft.extensions.configuration.abstractions.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.23\\microsoft.extensions.configuration.binder.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.23\\microsoft.extensions.dependencyinjection.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.23\\microsoft.extensions.dependencyinjection.abstractions.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.23\\microsoft.extensions.identity.core.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.23\\microsoft.extensions.identity.stores.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.logging\\3.1.23\\microsoft.extensions.logging.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.23\\microsoft.extensions.logging.abstractions.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.options\\3.1.23\\microsoft.extensions.options.3.1.23.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.23\\microsoft.extensions.primitives.3.1.23.nupkg.sha512"
+  ],
+  "logs": []
+}

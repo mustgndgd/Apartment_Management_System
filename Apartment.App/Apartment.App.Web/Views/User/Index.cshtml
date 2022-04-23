@@ -1,0 +1,61 @@
+﻿ @model Apartment.App.Web.Models.UserViewModels.UserViewModel
+ @using Microsoft.AspNetCore.Identity
+ @using System.Security.Claims 
+@using Apartment.App.Domain.Entities.IdentityEntities
+ @inject SignInManager<User> SignInManager
+ @inject UserManager<User> UserManager
+ @{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+ }  <div class="d-flex justify-content-between">
+     <h3>Mevcut Kullanıcılar  </h3>
+     <a class="btn btn-success" href="@Url.Action("Add", "User")">Yeni Kullanıcı Ekle</a>
+ </div>
+ <br/>
+ <table class="table table-striped">
+     <thead>
+     <tr>
+         <th>Adı</th>
+         <th>Soyadı</th>
+         <th>Telefon No</th>
+         <th>TC Kimlik No</th>
+         <th>Email</th>
+         <th>Plaka</th>
+         <th>Roller</th>
+         <th>İşlemler</th>
+     </tr>
+     </thead>
+     <tbody>
+     @foreach (var user in Model.Users)
+     {
+         <tr>
+             <td>@user.FirstName</td>
+             <td>@user.LastName</td>
+             <td>@user.PhoneNumber</td>
+             <td>@user.TrIdentityNumber</td> 
+             <td>@user.Email</td>
+             <td>
+                 @if (user.HasCar)
+                 {
+                     @user.CarPlateNumber
+                 }
+                 else
+                 {
+                     <span class="label label-danger">Araç Yok</span>
+                 }
+             </td>
+             <td>
+                    <b>Kullanıcı</b>
+                    @if (user.UserIsAdmin)
+                    {
+                        <br />
+                        <b>Yönetici</b>
+                    }
+             </td>
+             <td>
+                 <a class="btn btn-primary" href="@Url.Action("Update", "User",new{TrIdentityNumber=@user.TrIdentityNumber})">Güncelle</a>
+             </td>
+         </tr>
+     }
+     </tbody>
+ </table>
+ 

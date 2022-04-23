@@ -1,0 +1,77 @@
+﻿@model Apartment.App.Web.Models.HousingViewModels.HousingViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Daire Yönetim Penceresi</h1>
+ 
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Ev Durumu</th>
+        <th>Kiracı Mı?</th>
+        <th>Blok</th>
+        <th>Kat</th>
+        <th>No</th>
+        <th>Tip</th>
+        <th>İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var housing in Model.HousingList)
+    {
+        <tr>
+            <td>
+                @if (housing.IsEmpty)
+                {
+                    <b>BOŞ</b>
+                }
+                else
+                {
+                    <b>DOLU </b>
+                    
+                   
+                }
+            </td>
+            <td>
+                @if (housing.IsHomeowner)
+                {
+                    <b>EV SAHİBİ</b>
+                }
+                else
+                {
+                    <b>KİRACI</b>
+                }
+
+            </td>
+            <td>@housing.BlockNumber</td>
+            <td>@housing.FloorNumber</td>
+            <td>@housing.ApartmentNumber</td>
+            <td>@housing.ApartmentSizeInfo</td>
+            <td>
+                    @if (Model.isUserAdmin)
+                    {
+                        @if (housing.IsEmpty == false)
+                        {
+                            <a class="btn btn-info" href="@Url.Action("Add", "Invoice",new{housingId=@housing.Id})">Yeni Fatura Ekle</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-info" href="@Url.Action("AddHirer", "Housing",new{housingId=@housing.Id})">Kiracı Ekle</a>
+                        }
+                        
+                        <a class="btn btn-primary" href="@Url.Action("Index", "Invoice",new{id=@housing.Id})">Faturaları Görüntüle</a>
+                    }
+                    else 
+                    {
+                        <a class="btn btn-primary" href="@Url.Action("Index", "Invoice")">Faturalarıma Git</a>
+                    }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+  
+@if (Model.isUserAdmin)
+{
+    <a class="btn btn-info" href="@Url.Action("Index", "Block")">Yeni Ev Ekle</a>
+}

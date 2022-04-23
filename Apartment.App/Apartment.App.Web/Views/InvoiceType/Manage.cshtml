@@ -1,0 +1,29 @@
+﻿@model Apartment.App.Web.Models.InvoiceTypeModels.InvoiceTypeManageModel
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using Apartment.App.Domain.Entities.IdentityEntities
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@inject RoleManager<IdentityRole> RoleManager
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Fatura Tipi Yönetim Penceresi</h1>
+<form id="myForm" method="post">
+    <div class="form-group hide">
+        <input asp-for="Id" class="form-control" value="@Model.Id" hidden="true" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" value="@Model.Name"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Unit"></label>
+        <input asp-for="Unit" class="form-control" value="@Model.Unit"/>
+        <span asp-validation-for="Unit" class="text-danger"></span>
+    </div>
+    <input type="submit"  class="btn-inf btn-success"value="EKLE/GÜNCELLE"/>
+</form>
+
+

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Apartment.App.DataAccess.EntityFramework\Apartment.App.DataAccess.EntityFramework.csproj" />
+    <ProjectReference Include="..\Apartment.App.Domain\Apartment.App.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

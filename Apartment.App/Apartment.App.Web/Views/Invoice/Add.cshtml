@@ -1,0 +1,93 @@
+﻿@model Apartment.App.Web.Models.InvoiceModels.InvoiceAddModel
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using System.Security.Cryptography.X509Certificates
+@using Apartment.App.Domain.Entities.IdentityEntities
+@using System.Collections
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@inject RoleManager<IdentityRole> RoleManager
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Fatura Ekleme Penceresi</h1>
+<form id="myForm" method="post">
+
+
+    <div class="form-group">
+        <label asp-for="@Model.InvoiceOwnerTrIdentity"></label>
+        <input asp-for="@Model.InvoiceOwnerTrIdentity" class="form-control" readonly="readonly" />
+        <span asp-validation-for="@Model.InvoiceOwnerTrIdentity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.housingOwner"></label>
+        <input asp-for="@Model.housingOwner" class="form-control" readonly="readonly" />
+        <span asp-validation-for="@Model.housingOwner" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.housingAddress"></label>
+        <input asp-for="@Model.housingAddress" class="form-control" readonly="readonly" />
+        <span asp-validation-for="@Model.housingAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m=>@Model.InvoiceTypeId, new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.DropDownListFor(a=>@Model.InvoiceTypeId, new SelectList( (IEnumerable)ViewData["InvoiceTypes"] , "Id", "TypeName"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => @Model.InvoiceTypeId, "", new {@class = "text-danger"})
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.TotalDay"></label>
+        <input asp-for="@Model.TotalDay" class="form-control" type="number" />
+        <span asp-validation-for="@Model.TotalDay" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.InvoiceAmountOfUse"></label>
+        <input asp-for="@Model.InvoiceAmountOfUse" class="form-control" />
+        <span asp-validation-for="@Model.InvoiceAmountOfUse" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.InvoiceUnitPrice"></label>
+        <input asp-for="@Model.InvoiceUnitPrice" class="form-control" />
+        <span asp-validation-for="@Model.InvoiceUnitPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.InvoicePrice"></label>
+        <input asp-for="@Model.InvoicePrice" class="form-control" readonly="readonly" />
+        <span asp-validation-for="@Model.InvoicePrice" class="text-danger"></span>
+    </div>
+    <input class="btn btn-success" type="submit" value="FATURA EKLE" />
+</form>
+
+
+@section Scripts {
+    <script>
+       
+        $(document).ready(function () {
+        
+            $("#InvoiceAmountOfUse").change(function () {
+                var amount = parseFloat( $("#InvoiceAmountOfUse").val());
+                var Unitprice = parseFloat( $("#InvoiceUnitPrice").val());
+           
+                if ($("#InvoiceAmountOfUse").val() > 0 && $("#InvoiceUnitPrice").val() != "" && $("#InvoiceUnitPrice").val() > 0) {
+                    var total = amount * Unitprice;
+                $("#InvoicePrice").val(total.toFixed(2));
+                }
+            });
+            $("#InvoiceUnitPrice").change(function () {
+                var amount = parseFloat( $("#InvoiceAmountOfUse").val());
+                var Unitprice = parseFloat( $("#InvoiceUnitPrice").val());
+           
+                if ($("#InvoiceAmountOfUse").val() > 0 && $("#InvoiceUnitPrice").val() != "" && $("#InvoiceUnitPrice").val() > 0) {
+                    var total = amount * Unitprice;
+                $("#InvoicePrice").val(total.toFixed(2));
+                }
+            });
+
+        
+        });
+
+    </script>
+}
+
+

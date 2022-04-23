@@ -1,0 +1,80 @@
+﻿ @model Apartment.App.Web.Models.HousingViewModels.HousingAddViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Mesken/Daire Güncelleme Penceresi</h1>
+
+<form id="housingUpdateForm" method="post">
+    
+    <div class="form-group "   >
+        <input asp-for="Id" class="form-control" hidden="hidden" type="number" readonly="readonly"    />
+    </div>
+    <div class="form-group">
+        <label asp-for="BlockNumber"></label>
+        <input asp-for="BlockNumber" class="form-control" type="number" value="@Model.BlockNumber" readonly="readonly"  />
+        <span asp-validation-for="BlockNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FloorNumber"></label>
+        <input asp-for="FloorNumber" class="form-control" type="number" value="@Model.FloorNumber" readonly="readonly"  />
+        <span asp-validation-for="FloorNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ApartmentNumber"></label>
+        <input asp-for="ApartmentNumber" class="form-control" type="number" value="@Model.ApartmentNumber"readonly="readonly"  />
+        <span asp-validation-for="ApartmentNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ApartmentSizeInfo"></label>
+        <input asp-for="ApartmentSizeInfo" class="form-control" />
+        <span asp-validation-for="ApartmentSizeInfo" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <div class="checkbox">
+            <label asp-for="IsEmpty">
+               Kiracı Var mı?
+                <input asp-for="IsEmpty" id="hosuingHasHirer"  class="form-check" />
+            </label>
+        </div>
+    </div>
+    
+    <div class="form-group" id="isHomeOwnerCheckForm">
+        <div class="checkbox">
+            <label asp-for="IsHomeowner">
+                Ev Sahibi mi?
+                <input asp-for="IsHomeowner" id="IsHomeowner" class="form-check" />
+            </label>
+        </div>
+    </div>
+    
+    <div class="form-group" id="housingTcIdentityNumberForm">
+        <label asp-for="HousingHirerTcIdentityNumber"></label>
+        <input asp-for="HousingHirerTcIdentityNumber" class="form-control" />
+        <span asp-validation-for="HousingHirerTcIdentityNumber" class="text-danger"></span>
+    </div>
+    <input type="submit" value="KAYDET" />
+</form>
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+       
+        $("#housingAddForm").find("#isHomeOwnerCheckForm").hide();
+        $("#IsHomeowner").prop("readonly", true);
+        $("#HousingHirerTcIdentityNumber").prop("readonly", true);
+        
+        $("#hosuingHasHirer").change(function () {
+            if ($(this).is(":checked")) {
+                $("#IsHomeowner").prop("readonly", false);
+                $("#HousingHirerTcIdentityNumber").prop("readonly", false);
+                $("#housingAddForm").find("#isHomeOwnerCheckForm").show();
+            } else {
+                $("#IsHomeowner").prop("readonly", true);
+                $("#HousingHirerTcIdentityNumber").prop("readonly", true);
+                $("#housingAddForm").find("#isHomeOwnerCheckForm").hide();
+            }
+        });
+    });
+</script>
+}

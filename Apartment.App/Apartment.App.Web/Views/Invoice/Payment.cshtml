@@ -1,0 +1,79 @@
+﻿@using System.Collections
+@model Apartment.App.Web.Models.InvoiceModels.InvoicePayViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Fatura Ödeme Penceresi</h1>
+<form id="myForm" method="post">
+    <div class="form-group ">
+        <input asp-for="InvoiceId" class="form-control" hidden="hidden" type="number" readonly="readonly" />
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoiceOwnerTcIdentityNumber"></label>
+        <input asp-for="InvoiceOwnerTcIdentityNumber" class="form-control" value="@Model.InvoiceOwnerTcIdentityNumber" readonly="readonly" />
+        <span asp-validation-for="InvoiceOwnerTcIdentityNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoiceOwnerFullName"></label>
+        <input asp-for="InvoiceOwnerFullName" class="form-control" value="@Model.InvoiceOwnerFullName" readonly="readonly" />
+        <span asp-validation-for="InvoiceOwnerFullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoiceAddress"></label>
+        <input asp-for="InvoiceAddress" class="form-control" value="@Model.InvoiceAddress" readonly="readonly" />
+        <span asp-validation-for="InvoiceAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoiceDetail"></label>
+        <input asp-for="InvoiceDetail" class="form-control" value="@Model.InvoiceDetail" readonly="readonly" />
+        <span asp-validation-for="InvoiceDetail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InvoicePrice"></label>
+        <input asp-for="InvoicePrice" class="form-control" value="@Model.InvoicePrice" readonly="readonly" />
+        <span asp-validation-for="InvoicePrice" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="CreditCardNumber"></label>
+        <input asp-for="CreditCardNumber" class="form-control" type="tel" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" />
+        <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreditCardOwnerName"></label>
+        <input asp-for="CreditCardOwnerName" class="form-control" />
+        <span asp-validation-for="CreditCardOwnerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label> Kredi Kartı Son Kullanma Tarihi Seçiniz</label>
+        <div class="d-flex flex-row">
+            <div class="p-2">
+                @Html.DropDownListFor(a => @Model.CreditCardLastUseableDateMonth, new SelectList((IEnumerable) ViewData["Months"], "Value", "Name"), new {@class = "form-control"})
+            </div>
+            <div class="p-2">
+                @Html.DropDownListFor(a => @Model.CreditCardLastUseableDateYear, new SelectList((IEnumerable) ViewData["Years"]), new {@class = "form-control"})
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <label asp-for="CreditCardSecurtiyNumber"></label>
+        <input asp-for="CreditCardSecurtiyNumber" class="form-control" type="number" maxlength="3" placeholder="xxx"/>
+        <span asp-validation-for="CreditCardSecurtiyNumber" class="text-danger"></span>
+    </div>
+
+    <input class="btn btn-success" type="submit" value="ÖDEME İŞLEMİNİ TAMAMLA" />
+</form>
+
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+
+    });
+
+</script>
+}

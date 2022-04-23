@@ -1,0 +1,87 @@
+﻿@model Apartment.App.Web.Models.InvoiceModels.InvoiceViewModel
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using Apartment.App.Domain.Entities.IdentityEntities
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<div class="d-flex justify-content-between">
+    <h1>Fatura Yönetim Penceresi</h1>
+ 
+    @if (Model.isUserAdmin)
+    {
+        <a class="btn btn-info" href="@Url.Action("SendAllInvoicesToOwners", "Invoice")">Ödenmemiş Faturalar için mail gönder</a>
+    }
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Fatura Sahibi TC</th>
+        <th>Fatura Sahibi</th>
+        <th>Ev Adresi </th>
+        <th>Fatura Tipi</th>
+        <th>Kullanım miktarı</th>
+        <th>Birim Fiyat</th>
+        <th>Kesim tarihi</th>
+        <th>Toplam Gün </th>
+        <th>Son Ödeme Tarihi</th>
+        <th>Tutar</th>
+        <th>İşlemler</th>
+        <th>Durum</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var invoice in Model.Invoices)
+    {
+        <tr>
+            <td>@invoice.InvoiceOwnerTrIdentity</td>
+            <td>@invoice.InvoiceOwnerName</td>
+            <td>@invoice.housingAdress</td>
+            <td>@invoice.invoiceType.Name</td>
+            <td>@invoice.InvoiceAmountOfUse  @invoice.invoiceType.Unit</td>
+            <td>@invoice.InvoiceUnitPrice</td>
+            <td>@invoice.CreatedDate</td>
+            <td>@invoice.TotalDay</td>
+            <td>@invoice.LastSpendDate</td>
+            <td>@invoice.InvoicePrice</td>
+            <td>
+                
+                @if (invoice.IsSpended)
+                {
+                    <a class="btn btn-primary" href="@Url.Action("PaymentDetail", "Invoice",new{id=invoice.Id})">ÖDEME BİLGİSİ GÖSTER</a>
+                }
+                else
+                {
+                    <a class="btn btn-success" href="@Url.Action("Payment", "Invoice",new{id=invoice.Id})">ÖDEME YAP</a>
+                }
+                
+                
+                @if (Model.isUserAdmin && invoice.IsSpended == false)
+                {
+                    <a class="btn btn-primary" href="@Url.Action("Update", "Invoice",new{id=invoice.Id})">Güncelle</a>
+                }   
+            </td>
+            <td>
+                @if (invoice.IsSpended)
+                {
+                    <div class="alert alert-success" role="alert">
+                        ÖDENDİ
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger" role="alert">
+                        ÖDENMEDİ
+                    </div>
+
+                }
+                
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+ 

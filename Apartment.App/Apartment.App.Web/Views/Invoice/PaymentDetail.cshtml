@@ -1,0 +1,16 @@
+﻿@model Apartment.App.Web.Models.InvoiceModels.PaymentRecordiewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Fatura Makbuzu Görüntüleme</h1>
+<div class="d-flex flex-column">
+    <div class="p-2"><label> Fatura Sahibi TC Kimlik No : @Model.record.invoiceOwnerTrIdentityNumber </label> </div>
+    <div class="p-2"><label> Kart Numarası : @Model.record.cardNumber </label> </div>
+    <div class="p-2"><label> Kart Sahibi : @Model.record.cardOwnerName </label> </div>
+    <div class="p-2"><label> Kart Son Kullanma Tarihi : @Model.record.cardLastUsableDate </label> </div>
+    <div class="p-2"><label> Kart CVV : @Model.record.cardSecurityNumber </label> </div>
+    <div class="p-2"><label> Fatura Tutarı : @Model.record.invoicePrice </label> </div>
+</div>
+
+<a class="btn btn-info" href="@Url.Action("Index", "Invoice")">Faturalara Geri Dön</a>

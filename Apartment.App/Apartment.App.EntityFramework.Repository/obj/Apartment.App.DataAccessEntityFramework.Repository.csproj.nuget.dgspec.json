@@ -1,0 +1,235 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.EntityFramework.Repository\\Apartment.App.DataAccessEntityFramework.Repository.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\Apartment.App.DataAccess.EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\Apartment.App.DataAccess.EntityFramework.csproj",
+        "projectName": "Apartment.App.DataAccess.EntityFramework",
+        "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\Apartment.App.DataAccess.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\mac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.23, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj",
+        "projectName": "Apartment.App.Domain",
+        "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj",
+        "packagesPath": "C:\\Users\\mac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.EntityFramework.Repository\\Apartment.App.DataAccessEntityFramework.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.EntityFramework.Repository\\Apartment.App.DataAccessEntityFramework.Repository.csproj",
+        "projectName": "Apartment.App.DataAccessEntityFramework.Repository",
+        "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.EntityFramework.Repository\\Apartment.App.DataAccessEntityFramework.Repository.csproj",
+        "packagesPath": "C:\\Users\\mac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.EntityFramework.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\Apartment.App.DataAccess.EntityFramework.csproj": {
+                "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.DataAccess.EntityFramework\\Apartment.App.DataAccess.EntityFramework.csproj"
+              },
+              "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\mac\\Desktop\\vs2022\\Mustafa-Gundogdu_Final_Homework\\Apartment.App\\Apartment.App.Domain\\Apartment.App.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
